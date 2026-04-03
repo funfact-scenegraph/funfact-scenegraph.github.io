@@ -1,0 +1,144 @@
+strict digraph "" {
+	0	[description="A black paneled door located at the center of the wall, with a small round handle on the lower left side. Likely leads to another \
+room and may interact with the handle to change its open/close state.",
+		group_id="(0, 0)",
+		is_object=True,
+		name=door];
+	1	[description="A double light switch on the wall to the left of the door. Each switch can control lights or devices in the room, providing functional \
+relationships.",
+		group_id="(1, 1)",
+		is_object=True,
+		name="light switch"];
+	10	[description="A round ceiling-mounted light fixture located near the center of the ceiling; likely controlled by a wall switch, but the switch \
+is not visible in this view.",
+		group_id="(4, 0)",
+		is_object=True,
+		name="ceiling light"];
+	1 -> 10	[confidence=0.997,
+		interaction="turns on/off"];
+	2	[description="A small lamp with a circular shade sitting on the desk, near the window. The lamp likely has an integrated switch to control the \
+light.",
+		group_id="(2, 0)",
+		is_object=True,
+		name="desk lamp"];
+	3	[description="A rectangular window on the wall, partially covered by a horizontal blind. The window may have interactive parts (such as a blind \
+mechanism or window latch) but no visible functional parts from this view.",
+		group_id="(2, 1)",
+		is_object=True,
+		name=window];
+	17	[group_id="(2, 1)",
+		is_object=False,
+		name=blind];
+	3 -> 17	[interaction=contains];
+	17 -> 3	[confidence=0.804,
+		interaction="blocks or reveals window"];
+	4	[description="A laptop placed on the desk. Its functional elements are not exposed (screen closed/off, no keyboard or buttons visible from this \
+angle).",
+		group_id="(2, 2)",
+		is_object=True,
+		name=laptop];
+	18	[group_id="(2, 2)",
+		is_object=False,
+		name=keyboard];
+	4 -> 18	[interaction=contains];
+	19	[group_id="(2, 2)",
+		is_object=False,
+		name=touchpad];
+	4 -> 19	[interaction=contains];
+	5	[description="A small analog desk clock sitting on a dark surface, possibly another piece of furniture at the bottom right.",
+		group_id="(2, 3)",
+		is_object=True,
+		name=clock];
+	4 -> 5	[confidence=0.500,
+		interaction="sets time by"];
+	18 -> 4	[confidence=0.856,
+		interaction="inputs commands to"];
+	19 -> 4	[confidence=0.684,
+		interaction="moves pointer and controls navigation for"];
+	6	[group_id="(2, 3)",
+		is_object=False,
+		name=button];
+	5 -> 6	[interaction=contains];
+	6 -> 5	[confidence=1.000,
+		interaction="press to set or adjust time"];
+	7	[description="A black bookshelf positioned under the cardboard box, partially filled with books and other items. No obvious functional parts are \
+visible from this perspective.",
+		group_id="(3, 2)",
+		is_object=True,
+		name=bookshelf];
+	8	[description="An open cardboard box placed on top of a shelving unit to the right. The box appears to have no interactive parts visible from this \
+angle.",
+		group_id="(3, 3)",
+		is_object=True,
+		name=box];
+	9	[description="a green leafy plant in a white pot with a saucer beneath, right side of the bookshelf's top",
+		group_id="(3, 4)",
+		is_object=True,
+		name="potted plant"];
+	11	[description="A small red trash bin placed on the floor beneath the mirror.",
+		group_id="(4, 2)",
+		is_object=True,
+		name="trash bin"];
+	12	[description="Mirror on the wall to the left, partially outside the frame, reflecting part of the room and possibly functional elements out of \
+current view.",
+		group_id="(7, 2)",
+		is_object=True,
+		name=mirror];
+	13	[description="A single-sized bed in the lower left corner with a blue striped cover, pillow, and teddy bear. Beds might hide drawers or compartments, \
+but none are visible from this angle.",
+		group_id="(9, 3)",
+		is_object=True,
+		name=bed];
+	14	[description="Tennis or badminton racket placed upright in the far right corner of the room.",
+		group_id="(9, 4)",
+		is_object=True,
+		name=racket];
+	15	[description="A picture frame with a monochrome image, hung on the back left wall above the bed.",
+		group_id="(9, 5)",
+		is_object=True,
+		name="picture frame"];
+	16	[description="A partial view of a desk with items on top. The front or drawers are not clearly visible from this angle so interactive components \
+are unknown.",
+		group_id="(10, 3)",
+		is_object=True,
+		name=desk];
+	20	[description="A desk lamp on the far right side of the desk. The lamp likely has a switch functional part to control its state.",
+		group_id="(13, 0)",
+		is_object=True,
+		name=lamp];
+	21	[description="A desk surface below the window, visible partially in the lower part of the image. It holds a laptop, a book, and a pen, but no \
+visible drawers, handles, or other direct interactive elements from this view.",
+		group_id="(29, 2)",
+		is_object=True,
+		name=desk];
+	22	[description="A stuffed teddy bear sitting on the bed. Not interactive with room systems.",
+		group_id="(30, 1)",
+		is_object=True,
+		name="teddy bear"];
+	23	[description="A single pillow placed on the bed, patterned with a checkered design.",
+		group_id="(30, 2)",
+		is_object=True,
+		name=pillow];
+	24	[description="Window blinds partially or fully closed, covering the top portion of the window. May have a control mechanism out of current view.",
+		group_id="(32, 1)",
+		is_object=True,
+		name=blinds];
+	24 -> 3	[confidence=0.997,
+		interaction="blocks/unblocks light through"];
+	25	[description="A smartphone lying flat on a desk beside a cup.",
+		group_id="(42, 3)",
+		is_object=True,
+		name=smartphone];
+	26	[description="A white cup with a handle, placed on the desk.",
+		group_id="(42, 4)",
+		is_object=True,
+		name=cup];
+	27	[description="A rectangular box of tissues with tissues slightly protruding, next to the lamp on the desk.",
+		group_id="(42, 5)",
+		is_object=True,
+		name="tissue box"];
+	28	[description="A pen placed on the desk near the laptop.",
+		group_id="(46, 3)",
+		is_object=True,
+		name=pen];
+}
